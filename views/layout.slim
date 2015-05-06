@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[content="width=device-width, initial-scale=1" name="viewport"]
+    
+    / ===== Google meta tags
+    title Your title here
+    meta name="description" content=""
+    
+    / ===== Facebook meta tags
+    meta property="og:url" content=""
+    meta property="og:type" content=""
+    meta property="og:title" content=""
+    meta property="og:image" content=""
+    meta property="og:locale" content=""
+    meta property="og:site_name" content=""
+    meta property="og:description" content=""
+    
+    / ====== Twitter meta tags
+    meta name="twitter:card" content=""
+    meta name="twitter:site" content=""
+    meta name="twitter:description" content=""
+    meta name="twitter:image" content=""
+    meta name="twitter:url" content=""
+    
+    /[if lt IE 9]
+      meta[content="text/html; charset=utf-8" http-equiv="Content-Type"]
+      script[src="#{javascript_path '//html5shiv.googlecode.com/svn/trunk/html5.js'}"]
+    noscript
+      link[href="#{stylesheet_path 'styles.css'}" rel="stylesheet" type="text/css"]
+
+  body
+    == yield
+    
+    / ===== CSS dynamic loading
+    javascript:
+      var cb=function() {var l=document.createElement('link');l.rel='stylesheet';l.href='#{stylesheet_path 'styles.css'}';var h=document.getElementsByTagName('head')[0];h.parentNode.insertBefore(l,h);l=document.createElement('link');l.rel='stylesheet';l.href='//fonts.googleapis.com/css?family=Lato:400,900,700,300';var h=document.getElementsByTagName('head')[0];h.parentNode.insertBefore(l,h);};
+      var raf=window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if(raf){raf(cb);}else{if(window.addEventListener){window.addEventListener('load',cb,false);}else if(window.attachEvent){window.attachEvent('onload',cb)}else{cb();}}
+
+    / ==== Javascript loading
+    script[src="#{javascript_path 'main.js'}"]
