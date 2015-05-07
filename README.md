@@ -6,14 +6,14 @@
 ```bash
 git clone git@github.com:codelandev/pipe.git
 
-cd hotsite-codeland
+cd pipe
 
-bundle install
+bundle
 ```
 
 To start the server:
 ```bash
-shotgun
+bundle exec shotgun
 ```
 ## Features
 - sass compilation
