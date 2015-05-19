@@ -28,14 +28,14 @@ html
       meta[content="text/html; charset=utf-8" http-equiv="Content-Type"]
       script[src="//html5shiv.googlecode.com/svn/trunk/html5.js"]
     noscript
-      link[href="#{stylesheet_path 'styles.css'}" rel="stylesheet" type="text/css"]
+      link[href="#{stylesheet_path 'style.css'}" rel="stylesheet" type="text/css"]
 
   body
     == yield
     
     / ===== CSS dynamic loading
     javascript:
-      var cb=function() {var l=document.createElement('link');l.rel='stylesheet';l.href='#{stylesheet_path 'styles.css'}';var h=document.getElementsByTagName('head')[0];h.parentNode.insertBefore(l,h);l=document.createElement('link');l.rel='stylesheet';l.href='//fonts.googleapis.com/css?family=Lato:400,900,700,300';var h=document.getElementsByTagName('head')[0];h.parentNode.insertBefore(l,h);};
+      var cb=function() {var l=document.createElement('link');l.rel='stylesheet';l.href='#{stylesheet_path 'style.css'}';var h=document.getElementsByTagName('head')[0];h.parentNode.insertBefore(l,h);l=document.createElement('link');l.rel='stylesheet';l.href='//fonts.googleapis.com/css?family=Lato:400,900,700,300';var h=document.getElementsByTagName('head')[0];h.parentNode.insertBefore(l,h);};
       var raf=window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
       if(raf){raf(cb);}else{if(window.addEventListener){window.addEventListener('load',cb,false);}else if(window.attachEvent){window.attachEvent('onload',cb)}else{cb();}}
 
