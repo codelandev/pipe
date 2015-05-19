@@ -8,6 +8,7 @@ gem 'pony'
 gem 'uglifier'
 gem 'sinatra-asset-pipeline', '~> 0.7.0', require: 'sinatra/asset_pipeline'
 gem 'thin'
+gem 'sinatra-partial'
 
 # dev
 gem 'shotgun', '0.9'
